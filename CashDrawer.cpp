@@ -26,6 +26,11 @@ void CashDrawer::Display() {
 
 int CashDrawer::pay(string horseName, int payout) {
 	int oneOut = 0, fiveOut = 0, tenOut = 0, twentyOut = 0, hundredOut = 0;
+	int cOnes = Ones;
+	int cFives = Fives;
+	int cTens = Tens;
+	int cTwentys = Twentys;
+	int cHundres = Hundreds;
 	int tempTotal = payout;
 
 	// if there isn't enough in the till, return error
@@ -34,33 +39,34 @@ int CashDrawer::pay(string horseName, int payout) {
 		return 0;
 	}
 
-	while (tempTotal >= 100) {
+	while ((tempTotal >= 100) && (cHundres > 0)) {
 		hundredOut++;
+		cHundres--;
 		tempTotal -= 100;
 	}
-	while (tempTotal >= 20) {
+	while ((tempTotal >= 20) && (cTwentys > 0)) {
 		twentyOut++;
+		cTwentys--;
 		tempTotal -= 20;
 	}
-	while (tempTotal >= 10) {
+	while ((tempTotal >= 10) && (cTens > 0)) {
 		tenOut++;
+		cTens--;
 		tempTotal -= 10;
 	}
-	while (tempTotal >= 5) {
+	while ((tempTotal >= 5) && (cFives > 0)) {
 		fiveOut++;
+		cFives--;
 		tempTotal -= 5;
 	}
-	while (tempTotal >= 1) {
+	while ((tempTotal >= 1) && (cOnes > 0)) {
 		oneOut++;
+		cOnes--;
 		tempTotal -= 1;
 	}
 
-	if (
-		(hundredOut <= Hundreds) &&
-		(twentyOut <= Twentys) &&
-		(tenOut <= Tens) &&
-		(fiveOut <= Fives) &&
-		(oneOut <= Ones)) {
+
+	if (0 == tempTotal) {
 		//  We can pay it out
 		Total -= payout;
 
