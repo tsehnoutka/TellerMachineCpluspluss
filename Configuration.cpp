@@ -58,13 +58,13 @@ void Configuration::readFile() {
 }// end readFile
 void Configuration::LoadHorses() {
 	aHorses = {
-		{1,{1, "That Darn Grey Cat", 5, "won"} },
-		{2,{2, "Fort Utopis"       ,10, "lost"}},
-		{3,{3, "Count Sheep"       , 9, "lost"}},
-		{4,{4, "Ms Traitou"        , 4, "lost"}},
-		{5,{5, "Real Princess"     , 3, "lost"}},
-		{6,{6, "Pa Kettle"         , 5, "lost"}},
-		{7,{7, "Gin Stinger"       , 6, "lost"}}
+		{1,{1, "That Darn Grey Cat", 5, true }},
+		{2,{2, "Fort Utopis"       ,10, false}},
+		{3,{3, "Count Sheep"       , 9, false}},
+		{4,{4, "Ms Traitou"        , 4, false}},
+		{5,{5, "Real Princess"     , 3, false}},
+		{6,{6, "Pa Kettle"         , 5, false}},
+		{7,{7, "Gin Stinger"       , 6, false}}
 	};
 	currentWinner = 1;
 }

@@ -88,8 +88,8 @@ void TellerMachine::handleInput() {
 			case 'W':{
 				int horseNumber = stoi(input.substr(input.find(' ') + 1));
 				int c = config->getCurrentWinner();
-				localHorses->at(c).setWon("lost");
-				localHorses->at(horseNumber).setWon("won");
+				localHorses->at(c).setWon(false);
+				localHorses->at(horseNumber).setWon(true);
 				config->setCurrentWinner(horseNumber);
 				break;
 			}

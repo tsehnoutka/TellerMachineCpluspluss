@@ -3,16 +3,16 @@
 Horse::Horse() {
 }
 
-Horse::Horse(int n, string sName, int o, string w) {
+Horse::Horse(int n, string sName, int o, bool w) {
 	number = n;
 	name.assign(sName);
 	odds = o;
-	if (!w.compare("won") || !w.compare("lost"))
-		won.assign(w);
+	won = w;
 }
 
 void Horse::print() {
-	std::cout << number << "," << name << "," << odds << "," << won << '\n';
+	string strWon = won ? "won" : "lost";
+	std::cout << number << "," << name << "," << odds << "," << strWon << '\n';
 } // end print
 
 int Horse::getNumber() {
@@ -27,10 +27,10 @@ int Horse::getOdds() {
 	return odds;
 }
 
-string Horse::Won() {
+bool Horse::Won() {
 	return won;
 }
 
-void Horse::setWon(string b) {
-	won.assign(b);
+void Horse::setWon(bool b) {
+	won = b;
 }

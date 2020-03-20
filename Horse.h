@@ -9,17 +9,17 @@ private:
 	int number;
 	string name;
 	int odds;
-	string won;
+	bool won;
 
 public:
 	Horse();
-	Horse(int n, string sName, int o, string w);
+	Horse(int n, string sName, int o, bool w);
 	void print();
 	int getNumber();
 	string getName();
 	int getOdds();
-	string Won();
-	void setWon(string b);
+	bool Won();
+	void setWon(bool b);
 
 };// end of Horse class
 
