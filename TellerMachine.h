@@ -12,6 +12,7 @@ private:
 
 public:
     TellerMachine(); 
-    bool validateInput(string s);
+    bool containPeriod(string s);
+    bool ValidateInput(string input);
     void handleInput();
 }; //  end of class
