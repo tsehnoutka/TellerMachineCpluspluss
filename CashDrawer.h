@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "Configuration.h"
+#include <map>
 
 using namespace std;
 
@@ -8,11 +9,8 @@ class CashDrawer
 {
 private:
 	Configuration *config;
-	int Ones;
-	int Fives;
-	int Tens;
-	int Twentys;
-	int Hundreds;
+	std::map<int, int> myTill;
+
 	int Total;
 
 public:

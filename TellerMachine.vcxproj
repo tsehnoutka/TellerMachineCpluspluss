@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClInclude Include="CashDrawer.h" />
     <ClInclude Include="Configuration.h" />
+    <ClInclude Include="Utilities.h" />
     <ClInclude Include="Horse.h" />
     <ClInclude Include="TellerMachine.h" />
   </ItemGroup>
